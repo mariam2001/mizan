@@ -7,10 +7,12 @@ just the code.
 
 ## 0. Project Setup
 - [x] Spring Initializr skeleton generated
-- [ ] Add missing dependencies to `pom.xml`: PostgreSQL driver, `flyway-core`
-      + `flyway-database-postgresql`, Lombok, a JWT library, Testcontainers
-      (postgres module + junit-jupiter)
-- [ ] Initialize git repo, first commit
+- [x] Add missing dependencies to `pom.xml`: PostgreSQL driver,
+      `spring-boot-starter-flyway` + `flyway-database-postgresql`, Lombok,
+      JJWT (api/impl/jackson, pinned to 0.12.6), Testcontainers
+      (`testcontainers-postgresql` + `testcontainers-junit-jupiter` — Boot 4.1.1
+      manages Testcontainers 2.x, which renamed these artifacts)
+- [x] Initialize git repo, first commit
 - [ ] `docker-compose.yml` with a Postgres service
 - [ ] Base `application.yml`/`.properties` (datasource, JPA, Flyway config)
 
