@@ -13,7 +13,7 @@ just the code.
       (`testcontainers-postgresql` + `testcontainers-junit-jupiter` — Boot 4.1.1
       manages Testcontainers 2.x, which renamed these artifacts)
 - [x] Initialize git repo, first commit
-- [ ] `docker-compose.yml` with a Postgres service
+- [x] `docker-compose.yml` with a Postgres service
 - [ ] Base `application.yml`/`.properties` (datasource, JPA, Flyway config)
 
 ## 1. Schema & Entities
