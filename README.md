@@ -92,15 +92,23 @@ left before the MVP is complete.
 
 ## Getting Started
 
-> ⚠️ Setup is still in progress — see [TODO.md](TODO.md). This section will
-> be filled in as the environment comes online.
+> 🚧 API endpoints are still being built — see [TODO.md](TODO.md) for progress.
+
+Prerequisites: Docker Desktop running, JDK 21.
 
 ```bash
-docker-compose up -d      # start Postgres
-./mvnw spring-boot:run    # run the app
+./mvnw spring-boot:run
 ```
 
-Once running, Swagger UI will be available at `/swagger-ui.html`.
+Spring Boot's Docker Compose integration auto-starts the `postgresdb`
+container defined in `compose.yaml` and wires the datasource automatically —
+no manual `docker-compose up` or `spring.datasource.*` config needed. On
+startup, Flyway applies `V1__init_schema.sql` against it.
+
+Swagger UI (`/swagger-ui/index.html`) and `/v3/api-docs` are wired in via
+springdoc-openapi, but currently return `401` since Spring Security's default
+config locks down all endpoints — they'll open up once auth (JWT) is built
+and the security config explicitly permits them.
 
 ## Design Decisions
 

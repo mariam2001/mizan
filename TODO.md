@@ -17,11 +17,14 @@ just the code.
 - [ ] Base `application.yml`/`.properties` (datasource, JPA, Flyway config)
 
 ## 1. Schema & Entities
-- [ ] `V1__init_schema.sql` — `users`, `stocks`, `holdings`,
+- [x] `V1__init_schema.sql` — `users`, `stocks`, `holdings`,
       `price_snapshots`, `rebalance_logs` (with the `auto_review_enabled`
-      column already on `users` before this migration ever runs)
+      column already on `users` before this migration ever runs). Verified
+      applied cleanly via `flyway_schema_history` in the running container.
 - [ ] JPA entities for all 5 tables, enums as `EnumType.STRING`
 - [ ] `ddl-auto=validate` — app boots clean against the Flyway-managed schema
+      (currently passes trivially since no entities are mapped yet — the
+      real test is once entities exist)
 
 ## 2. Auth
 - [ ] `User` entity implements Spring Security's user contract (roles, etc.)
