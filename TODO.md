@@ -21,10 +21,9 @@ just the code.
       `price_snapshots`, `rebalance_logs` (with the `auto_review_enabled`
       column already on `users` before this migration ever runs). Verified
       applied cleanly via `flyway_schema_history` in the running container.
-- [ ] JPA entities for all 5 tables, enums as `EnumType.STRING`
-- [ ] `ddl-auto=validate` — app boots clean against the Flyway-managed schema
-      (currently passes trivially since no entities are mapped yet — the
-      real test is once entities exist)
+- [x] JPA entities for all 5 tables, enums as `EnumType.STRING`
+- [x] `ddl-auto=validate` — app boots clean against the Flyway-managed schema
+      (confirmed with all 5 entities mapped — no `SchemaManagementException`)
 
 ## 2. Auth
 - [ ] `User` entity implements Spring Security's user contract (roles, etc.)
